@@ -40,7 +40,7 @@ var config = {
     // If log_filename is given logs will be written
     // there, in append mode. Otherwise stdout is used (default).
     // Log file will be re-opened on receiving the HUP signal
-    ,log_filename: 'logs/node-windshaft.log'
+    ,log_filename: undefined
     // Templated database username for authorized user
     // Supported labels: 'user_id' (read from redis)
     ,postgres_auth_user: 'development_cartodb_user_<%= user_id %>'
@@ -88,7 +88,14 @@ var config = {
       cache_ttl: 60000,
       metatile: 4,
       bufferSize: 64,
-      statsInterval: 5000 // milliseconds between each report to statsd about number of renderers and mapnik pool status
+      statsInterval: 5000, // milliseconds between each report to statsd about number of renderers and mapnik pool status
+      http: {
+          timeout: 2000, // the timeout in ms for a http tile request
+          proxy: undefined, // the url for a proxy server
+          whitelist: [ // the whitelist of urlTemplates that can be used
+              'http://{s}.example.com/{z}/{x}/{y}.png'
+          ]
+      }
     }
     ,millstone: {
         // Needs to be writable by server user
@@ -151,6 +158,14 @@ var config = {
     // X-Tiler-Profile header containing elapsed timing for various 
     // steps taken for producing the response.
     ,useProfiler:true
+    // Settings for the health check available at /health
+    ,health: {
+      enabled: false,
+      username: 'localhost',
+      z: 0,
+      x: 0,
+      y: 0
+    }
 };
 
 module.exports = config;

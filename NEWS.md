@@ -1,8 +1,54 @@
-1.21.1 -- 2014-mm-dd
+1.24.1 -- 2015-mm-dd
+--------------------
+ - Upgrades windshaft to mapnik-query-improvements branch
+
+
+1.24.0 -- 2015-01-15
 --------------------
 
 Announcements:
- - Upgrades windshaft to mapnik-query-improvements branch
+ - Upgrades windshaft to 0.34.0 for retina support
+
+
+1.23.1 -- 2015-01-14
+--------------------
+
+Announcements:
+ - Regenerate npm-shrinkwrap.json
+
+
+1.23.0 -- 2015-01-14
+--------------------
+
+Announcements:
+ - Upgrades windshaft to 0.33.0
+
+New features:
+ - Sets HTTP renderer configuration in server_options
+
+
+1.22.0 -- 2015-01-13
+--------------------
+
+New features:
+ - Health check endpoint
+
+
+1.21.2 -- 2014-12-15
+--------------------
+
+Announcements:
+ - Upgrades windshaft to 0.32.4
+
+
+1.21.1 -- 2014-12-11
+--------------------
+
+Announcements:
+ - Upgrades windshaft to 0.32.2
+
+Bugfixes:
+ - Closes fd for log files on `kill -HUP` (#230)
 
 
 1.21.0 -- 2014-10-24
